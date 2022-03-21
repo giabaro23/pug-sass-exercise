@@ -1,0 +1,36 @@
+mixin contentL(data)
+    .define-left 
+        .define-left__topic 
+            h1= data.topic
+            p.define-left__text= data.content 
+        .define-left__img 
+            img(src=data.img, alt="" srcset="")
+
+mixin contentR(data)
+    .define-right 
+        .define-right__img 
+            img(src=data.img, alt="" srcset="")
+        .define-right__topic 
+            h1= data.topic
+            p.define-right__text= data.content 
+
+section.main 
+    .banner
+        .banner__img 
+            img(src="./assets/banner.jpg" alt="" srcset="")
+        .banner__text 
+            h1 D E J A V U 
+            h2 What exactly it is?
+            h2 What causes deja vu?
+    - const df1 = {"topic":"What exactly it is?","content":"“Déjà vu” describes the uncanny sensation that you’ve already experienced something, even when you know you never have. Say you go paddleboarding for the first time. You’ve never done anything like it, but you suddenly have a distinct memory of making the same arm motions, under the same blue sky, with the same waves lapping at your feet.","img":"./assets/img1.jpg"}
+    +contentL(df1)
+    - const dr1 ={"topic": "What causes Deja vu?", "content":"Researchers can’t easily study déjà vu, partially because it happens without warning and often in people without underlying health concerns that might play a part. What’s more, déjà vu experiences tend to end as quickly as they begin. The sensation may be so fleeting that if you don’t know much about déjà vu, you may not even realize what just happened.","img":"./assets/img2.jpg"}
+    +contentR(dr1)
+
+    .expression-banner 
+        h1 Expression
+
+    - const df2 ={"topic":"Memory recall","content":"Many experts believe déjà vu has to do with the way you process andrecall memories. Research conducted by Anne Cleary, a déjà vu researcher and psychology professor at Colorado State University, has helped generate some support for this theory.","img":"./assets/img3.jpg"}
+    +contentL(df2)
+    -const dr2 ={"topic":"Minor brain circuit malfunctions","content":"Another theory suggests déjà vu happens when your brain “glitches,”so to speak, and experiences a brief electrical malfunction — similar to what happens during an epileptic seizure.In other words, it can happen as a sort of mix-up when the part of your brain that tracks present events and the part of your brain that recalls memories are both active.","img":"./assets/img4.jpg"}
+    +contentR(dr2)

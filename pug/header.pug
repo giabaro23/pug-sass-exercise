@@ -1,0 +1,26 @@
+mixin headerDropdown(data)
+    .header__right-dropdown 
+        each n in data 
+            .dropdown-topic 
+                a(href="#")=n 
+
+section.header
+    .header__left 
+        img(src="./assets/imgLogo.png",alt="")
+    .header__right 
+        .header__right-topic 
+            .header__right-content 
+                p Healthy condition
+            - const hd = ["Breast Cancer","Migraine","Cancer"]
+            +headerDropdown(hd)
+        .header__right-topic 
+            .header__right-content 
+                p  Subscribe 
+        .header__right-topic 
+            .header__right-content 
+                p Plan 
+            - const plan = ["Mindful Eating","Sugar Savvy", "Move your body"]
+            +headerDropdown(plan)
+        .header__right-topic 
+            .header__right-content 
+                p Contact
